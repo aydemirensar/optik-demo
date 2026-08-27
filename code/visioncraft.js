@@ -38,54 +38,55 @@
 
   if (burger && mobile) {
     burger.setAttribute('aria-controls', mobile.id || 'vcPillMobile');
-     function setMenu(open){
-       mobile.classList.toggle('open', open);
-       burger.classList.toggle('open', open);
-       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-       document.body.classList.toggle('vc-menu-open', open);
-       document.body.style.overflow = open ? 'hidden' : '';
-       if(open){
-         menuReturnFocus = document.activeElement;
-         document.addEventListener('click', onDocClick);
-         document.addEventListener('keydown', onEsc);
-         var firstLink = mobile.querySelector('a');
-         if (firstLink) firstLink.focus();
-       } else {
-         document.removeEventListener('click', onDocClick);
-         document.removeEventListener('keydown', onEsc);
-         if (menuReturnFocus && typeof menuReturnFocus.focus === 'function') menuReturnFocus.focus();
-       }
-     }
-    function onDocClick(e){
-      if(!mobile.contains(e.target) && !burger.contains(e.target) && mobile.classList.contains('open')) setMenu(false);
+    function setMenu(open) {
+      mobile.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('vc-menu-open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        menuReturnFocus = document.activeElement;
+        document.addEventListener('click', onDocumentClick);
+        document.addEventListener('keydown', onMenuKeydown);
+        var firstLink = mobile.querySelector('a');
+        if (firstLink) firstLink.focus();
+      } else {
+        document.removeEventListener('click', onDocumentClick);
+        document.removeEventListener('keydown', onMenuKeydown);
+        if (menuReturnFocus && typeof menuReturnFocus.focus === 'function') menuReturnFocus.focus();
+      }
     }
-     function onEsc(e){
-       if(e.key==='Escape' && mobile.classList.contains('open')) { setMenu(false); return; }
-       if(e.key !== 'Tab' || !mobile.classList.contains('open')) return;
-       var focusable = mobile.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
-       if (!focusable.length) return;
-       var first = focusable[0], last = focusable[focusable.length - 1];
-       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-     }
-    burger.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var open = !mobile.classList.contains('open');
-      setMenu(open);
+    function onDocumentClick(event) {
+      if (!mobile.contains(event.target) && !burger.contains(event.target) && mobile.classList.contains('open')) setMenu(false);
+    }
+    function onMenuKeydown(event) {
+      if (event.key === 'Escape') { setMenu(false); return; }
+      if (event.key !== 'Tab' || !mobile.classList.contains('open')) return;
+      var focusable = mobile.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+    burger.addEventListener('click', function (event) {
+      event.stopPropagation();
+      setMenu(!mobile.classList.contains('open'));
     });
     mobile.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') setMenu(false);
+      if (e.target.tagName === 'A') {
+        setMenu(false);
+      }
     });
   }
 
-  /* Camera preview + MediaPipe face tracking AR overlay. */
+  /* Camera preview for homepage and AR CTA links. */
   (function () {
     var modal = document.getElementById('vcArModal');
     var video = document.getElementById('vcArVideo');
     var overlay = document.getElementById('vcArOverlay');
     var guide = modal ? modal.querySelector('.vc-ar-stage__frame') : null;
     var status = document.getElementById('vcArStatus');
-    var launchers = document.querySelectorAll('.vc-ar-launch, .vc-ar-cta .vc-btn--teal');
+    var launchers = document.querySelectorAll('.vc-ar-launch, .vc-hero .vc-btn--teal, .vc-ar-cta .vc-btn--teal, .vc-shop-tryon');
     if (!modal || !video || !launchers.length) return;
     var heroBadge = document.querySelector('.vc-ar-badge');
     if (heroBadge && (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia)) {
@@ -119,8 +120,9 @@
             b = Math.max(0, Math.min(255, (b - 255 * (1 - t)) / t));
             pixels.data[i] = r; pixels.data[i + 1] = g; pixels.data[i + 2] = b;
           }
-          /* Cam pikselleri: RGB kis + yuksek opaklik = koyu duman cam */
+          /* Cam pikselleri (altin cerceve disindaki dusuk sicaklikli renkler) yari saydam */
           if (alpha > 0 && (r - b) < 50 && brightness > 80) {
+            /* Camlari koyulastir: RGB kis + yuksek opaklik = koyu duman cam */
             r = Math.round(r * 0.28); g = Math.round(g * 0.28); b = Math.round(b * 0.28);
             pixels.data[i] = r; pixels.data[i + 1] = g; pixels.data[i + 2] = b;
             alpha = Math.round(alpha * 0.92);
@@ -264,6 +266,27 @@
     document.addEventListener('keydown', onKeydown);
   })();
 
+  var mobileSearchToggle = document.getElementById('vcMobileSearchToggle');
+  var mobileSearch = document.getElementById('vcMobileSearch');
+  if (mobileSearchToggle && mobileSearch) {
+    function setMobileSearch(open) {
+      mobileSearch.classList.toggle('is-open', open);
+      mobileSearch.setAttribute('aria-hidden', open ? 'false' : 'true');
+      mobileSearchToggle.classList.toggle('is-active', open);
+      mobileSearchToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        var field = document.getElementById('vcMobileSearchField');
+        if (field) window.setTimeout(function () { field.focus(); }, 80);
+      }
+    }
+    mobileSearchToggle.addEventListener('click', function () {
+      setMobileSearch(!mobileSearch.classList.contains('is-open'));
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') setMobileSearch(false);
+    });
+  }
+
   /* Floating pill footer: peek 28px, hover/scroll ile premium siyah açılma */
   var footer = document.getElementById('vcPillFooter');
   if (footer) {
@@ -328,6 +351,11 @@
     window.addEventListener('resize', updateDots);
     updateDots();
   })();
+  var dockLinks = document.querySelectorAll('.vc-mobile-dock [data-dock-path]');
+  for (var dockIndex = 0; dockIndex < dockLinks.length; dockIndex++) {
+    var dockPath = (dockLinks[dockIndex].getAttribute('data-dock-path') || '').replace(/\/$/, '');
+    if (dockPath === path) dockLinks[dockIndex].classList.add('is-active');
+  }
 
   /* Scroll reveal */
   var revealEls = document.querySelectorAll('.vc-reveal, .vc-ar-cta');
@@ -383,16 +411,13 @@
     });
   }
 
-  /* Marquee: duplicate content for seamless loop on larger screens only. */
+  /* Marquee: duplicate content for seamless loop */
   function duplicateForLoop(selector) {
     var track = document.querySelector(selector);
     if (track) track.innerHTML += track.innerHTML;
   }
-  var isCompactViewport = window.matchMedia && window.matchMedia('(max-width: 782px)').matches;
-  if (!isCompactViewport) {
-    duplicateForLoop('.vc-marquee .vc-marquee-track');
-    duplicateForLoop('.vc-testi .vc-testi-track');
-  }
+  duplicateForLoop('.vc-marquee .vc-marquee-track');
+  duplicateForLoop('.vc-testi .vc-testi-track');
 
   /* Featured products slider: auto-play carousel, seamless loop */
   (function () {
@@ -486,7 +511,6 @@
       }
     }
     function start() {
-      if (window.matchMedia && window.matchMedia('(max-width: 782px)').matches) return;
       if (state.timer) return;
       state.timer = setInterval(function () { if (!state.hover) next(); }, INTERVAL);
     }
@@ -511,192 +535,49 @@
     }, { passive: true });
     slider.addEventListener('mouseenter', function () { state.hover = true; });
     slider.addEventListener('mouseleave', function () { state.hover = false; });
-    /* Mobil swipe: parmakla ileri/geri + drag pause */
-    (function(){
-      var sx=0, dx=0, dragging=false;
-      var viewport = slider.querySelector('.vc-prod-viewport') || slider;
-      function onStart(x){ sx=x; dx=0; dragging=true; stop(); slider.classList.add('is-dragging'); if(viewport.classList) viewport.classList.add('is-dragging'); track.style.transition='none'; }
-      function onMove(x){ if(!dragging) return; dx=x-sx; track.style.transform='translateX('+(-state.index*state.step + dx)+'px)'; }
-      function onEnd(){ if(!dragging) return; dragging=false; slider.classList.remove('is-dragging'); if(viewport.classList) viewport.classList.remove('is-dragging');
-        if(Math.abs(dx)>50){ if(dx<0) next(); else prev(); } else { go(state.index, true); }
-        dx=0; start(); }
-      // touch
-      track.addEventListener('touchstart', function(e){ onStart(e.touches[0].clientX); }, {passive:true});
-      track.addEventListener('touchmove', function(e){ onMove(e.touches[0].clientX); }, {passive:true});
-      track.addEventListener('touchend', onEnd);
-      track.addEventListener('touchcancel', onEnd);
-      // mouse drag (tablet/desktop)
-      track.addEventListener('mousedown', function(e){ e.preventDefault(); onStart(e.clientX); });
-      window.addEventListener('mousemove', function(e){ onMove(e.clientX); });
-      window.addEventListener('mouseup', onEnd);
-    })();
-    window.addEventListener('resize', function () {
-      build();
-      if (window.matchMedia && window.matchMedia('(max-width: 782px)').matches) stop();
-      else start();
-    });
+    window.addEventListener('resize', build);
     build();
     start();
   })();
 
-  /* 3 Adım — mobil tekli slider (scroll-snap + dot + hint) */
-  (function(){
+  /* Three-step mobile rail indicator. */
+  (function () {
     var wrap = document.querySelector('.vc-steps');
-    if(!wrap) return;
+    if (!wrap) return;
     var steps = wrap.querySelectorAll('.vc-step');
-    if(steps.length < 2) return;
-    // sadece mobilde aktif olsun diye dots/hint ekle
+    if (steps.length < 2) return;
     var dots = document.createElement('div');
     dots.className = 'vc-steps-dots';
-    for(var i=0;i<steps.length;i++){
-      var b=document.createElement('button');
-      b.type='button'; b.setAttribute('aria-label','Adım '+(i+1));
-      if(i===0) b.classList.add('is-active');
-      (function(idx){ b.addEventListener('click', function(){ steps[idx].scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'}); }); })(i);
-      dots.appendChild(b);
-    }
-    var hint=document.createElement('div');
-    hint.className='vc-steps-hint';
-    hint.setAttribute('aria-hidden','true');
-    hint.innerHTML='← kaydır →';
-    wrap.insertAdjacentElement('afterend', hint);
-    hint.insertAdjacentElement('afterend', dots);
-    var dotBtns = dots.querySelectorAll('button');
-    var ticking=false;
-    function update(){
-      ticking=false;
-      var w = wrap.clientWidth;
-      var center = wrap.scrollLeft + w/2;
-      var active=0, best=Infinity;
-      steps.forEach(function(s, i){
-        var c = s.offsetLeft + s.offsetWidth/2;
-        var d = Math.abs(c - center);
-        if(d < best){ best=d; active=i; }
-      });
-      dotBtns.forEach(function(d,i){ d.classList.toggle('is-active', i===active); });
-    }
-    function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
-    wrap.addEventListener('scroll', onScroll, {passive:true});
-    window.addEventListener('resize', update);
-    // ilk durum
-    update();
-  })();
-
-  /* Müşteriler ne diyor — mobil snap slider (dots + hint, marquee desktop korunur) */
-  (function(){
-    var testi = document.querySelector('.vc-testi');
-    if(!testi) return;
-    var track = testi.querySelector('.vc-testi-track');
-    var cards = track ? track.querySelectorAll('.vc-testi-card') : testi.querySelectorAll('.vc-testi-card');
-    if(!track || cards.length < 2) return;
-    // marquee için duplicate edilmişse orijinali al (ilk yarısı)
-    var total = cards.length;
-    var origCount = total % 2 === 0 ? total/2 : total;
-    // heuristic: eğer duplicate metni aynen tekrar ediyorsa yarıya böl
-    if(total > 5 && total % 2 === 0){
-      var txt0 = cards[0].textContent.trim().slice(0,40);
-      var txtMid = cards[origCount].textContent.trim().slice(0,40);
-      if(txt0 !== txtMid) origCount = total;
-    }
-    var origCards = Array.prototype.slice.call(cards, 0, origCount);
-    var dots = document.createElement('div');
-    dots.className = 'vc-testi-dots';
-    origCards.forEach(function(_, i){
-      var b=document.createElement('button');
-      b.type='button'; b.setAttribute('aria-label','Yorum '+(i+1));
-      if(i===0) b.classList.add('is-active');
-      (function(idx){
-        b.addEventListener('click', function(){
-          var target = origCards[idx];
-          if(target) target.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+    dots.setAttribute('role', 'tablist');
+    dots.setAttribute('aria-label', 'Yeni gözlük adımları');
+    for (var i = 0; i < steps.length; i++) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', 'Adım ' + (i + 1));
+      if (i === 0) dot.classList.add('is-active');
+      (function (index) {
+        dot.addEventListener('click', function () {
+          steps[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         });
       })(i);
-      dots.appendChild(b);
-    });
-    var hint=document.createElement('div');
-    hint.className='vc-testi-hint';
-    hint.setAttribute('aria-hidden','true');
-    hint.innerHTML='← kaydır →';
-    testi.insertAdjacentElement('afterend', hint);
-    hint.insertAdjacentElement('afterend', dots);
-    var dotBtns = dots.querySelectorAll('button');
-    var ticking=false;
-    function isMobile(){ return window.matchMedia('(max-width: 782px)').matches; }
-    function update(){
-      ticking=false;
-      if(!isMobile()){ dotBtns.forEach(function(d,i){ d.classList.toggle('is-active', i===0); }); return; }
-      var w = testi.clientWidth;
-      var center = testi.scrollLeft + w/2;
-      var active=0, best=Infinity;
-      origCards.forEach(function(c, i){
-        var cc = c.offsetLeft + c.offsetWidth/2;
-        var d = Math.abs(cc - center);
-        if(d < best){ best=d; active=i; }
-      });
-      // duplicate bölgesindeyse modulo ile eşle
-      if(testi.scrollLeft > track.scrollWidth/2){
-        active = active % origCount;
-      }
-      dotBtns.forEach(function(d,i){ d.classList.toggle('is-active', i===active); });
+      dots.appendChild(dot);
     }
-    function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
-    testi.addEventListener('scroll', onScroll, {passive:true});
-    window.addEventListener('resize', update);
-    update();
-  })();
-
-  /* Bento grid → slider dots/hint (social + testi-bento) — mobil snap için */
-  (function(){
-    function wireBento(selGrid, dotClass, hintClass){
-      var grid=document.querySelector(selGrid);
-      if(!grid) return;
-      var cards=grid.querySelectorAll(':scope > *');
-      // sosyal için .vc-social-card, bento için .vc-tb-card
-      if(cards.length<2) return;
-      var dots=document.createElement('div');
-      dots.className=dotClass;
-      dots.setAttribute('aria-hidden','true');
-      cards.forEach(function(_,i){
-        var b=document.createElement('button');
-        b.type='button'; b.setAttribute('aria-label','Kart '+(i+1));
-        if(i===0) b.classList.add('is-active');
-        (function(idx){ b.addEventListener('click', function(){ cards[idx].scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'}); }); })(i);
-        dots.appendChild(b);
+    wrap.insertAdjacentElement('afterend', dots);
+    var dotButtons = dots.querySelectorAll('button');
+    function updateSteps() {
+      var center = wrap.scrollLeft + wrap.clientWidth / 2;
+      var active = 0, best = Infinity;
+      steps.forEach(function (step, index) {
+        var stepCenter = step.offsetLeft + step.offsetWidth / 2;
+        var distance = Math.abs(stepCenter - center);
+        if (distance < best) { best = distance; active = index; }
       });
-      var hint=document.createElement('div');
-      hint.className=hintClass;
-      hint.setAttribute('aria-hidden','true');
-      hint.textContent='← kaydır →';
-      // wrap'in parent'ı (social: .vc-social, bento: .vc-testi-bento-wrap) sonrası yerleştir
-      var anchor = grid.parentElement.classList.contains('vc-testi-bento-wrap') ? grid.parentElement : grid;
-      anchor.insertAdjacentElement('afterend', hint);
-      hint.insertAdjacentElement('afterend', dots);
-      var dotBtns=dots.querySelectorAll('button');
-      var ticking=false;
-      function isMobile(){ return window.matchMedia('(max-width: 782px)').matches; }
-      function update(){
-        ticking=false;
-        if(!isMobile()){ dotBtns.forEach(function(d,i){ d.classList.toggle('is-active', i===0); }); return; }
-        var w=grid.clientWidth;
-        var sl = grid.scrollLeft;
-        // grid kendisi scroll container (social) veya bento kendisi
-        if(grid.scrollWidth <= grid.clientWidth + 4){ dotBtns.forEach(function(d,i){ d.classList.toggle('is-active', i===0); }); return; }
-        var center = sl + w/2;
-        var active=0, best=Infinity;
-        cards.forEach(function(c,i){
-          var cc=c.offsetLeft + c.offsetWidth/2;
-          var d=Math.abs(cc-center);
-          if(d<best){ best=d; active=i; }
-        });
-        dotBtns.forEach(function(d,i){ d.classList.toggle('is-active', i===active); });
-      }
-      function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
-      grid.addEventListener('scroll', onScroll, {passive:true});
-      window.addEventListener('resize', update);
-      update();
+      dotButtons.forEach(function (button, index) { button.classList.toggle('is-active', index === active); });
     }
-    wireBento('.vc-social-grid','vc-social-dots','vc-social-hint');
-    wireBento('.vc-testi-bento','vc-testi-bento-dots','vc-testi-bento-hint');
+    wrap.addEventListener('scroll', updateSteps, { passive: true });
+    window.addEventListener('resize', updateSteps);
+    updateSteps();
   })();
 
   /* FAQ accordion: close others when one opens */
