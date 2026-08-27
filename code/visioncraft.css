@@ -3251,6 +3251,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     box-shadow: 0 16px 38px rgba(15,37,87,.2);
   }
   .vc-mobile-search.is-open { display: block; }
+  .vc-mobile-search.is-open ~ .vc-whatsapp,
+  body:has(.vc-mobile-search.is-open) .vc-whatsapp { display: none !important; }
   .vc-mobile-search form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin: 0; }
   .vc-mobile-search input[type="search"] {
     width: 100%;
