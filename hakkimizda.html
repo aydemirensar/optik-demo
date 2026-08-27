@@ -15,27 +15,27 @@
 <link rel="stylesheet" href="code/brands.css">
 <link rel="stylesheet" href="code/visioncraft.css">
 </head>
-<body>
-
-<!-- Header -->
+<body class="page woocommerce-no-js storefront-full-width-content">
 <header class="vc-pill-header" id="vcPillHeader">
-  <div class="vc-pill-header__inner">
-    <a href="homepage.html" class="vc-pill-brand">VisionCraft</a>
-    <nav class="vc-pill-nav">
-      <a href="homepage.html">Ana Sayfa</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="magaza.html">Mağaza</a>
-      <a href="iletisim.html">İletişim</a>
+  <div class="vc-pill-inner">
+    <a class="vc-pill-logo" href="homepage.html">
+      <span class="vc-logo-ico"><img class="vc-icon vc-icon--light" src="code/assets/glasses.png" alt="" width="18" height="18" /></span>
+      <span class="vc-logo-copy"><strong>VisionCraft</strong><small>OPT&#304;K</small></span>
+    </a>
+    <nav class="vc-pill-nav" aria-label="Ana men&#252;">
+      <a href="homepage.html">Ana Sayfa</a><a href="magaza.html">Ma&#287;aza</a><a href="recete-yukle.html">Re&#231;ete Y&#252;kle</a><a href="hakkimizda.html">Hakk&#305;m&#305;zda</a><a href="iletisim.html">&#304;leti&#351;im</a>
     </nav>
-    <button class="vc-pill-burger" id="vcPillBurger" aria-label="Menüyü aç" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="vc-pill-mobile" id="vcPillMobile" hidden>
-    <a href="homepage.html">Ana Sayfa</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="magaza.html">Mağaza</a>
-    <a href="iletisim.html">İletişim</a>
+    <div class="vc-pill-actions">
+      <a class="vc-pill-cart" href="sepet.html" aria-label="Sepet">
+        <span class="vc-pill-cart-text">Sepetim</span>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      </a>
+      <a class="vc-pill-btn" href="tel:+905425304245">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="vc-pill-btn-text">Hemen G&#246;r&#252;&#351;elim</span>
+      </a>
+      <button class="vc-pill-burger" id="vcPillBurger" aria-label="Men&#252;"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -62,21 +62,42 @@
   </div>
 </div>
 
-<!-- Footer -->
-<footer class="vc-pill-footer" id="vcPillFooter">
-  <div class="vc-pill-footer__inner">
-    <div class="vc-footer-brand">
-      <strong>VisionCraft Optik</strong>
-      <small>İstiklal Caddesi No:12, Beyoğlu / İstanbul</small>
-    </div>
-    <div class="vc-footer-links">
-      <a href="homepage.html">Ana Sayfa</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="iletisim.html">Gizlilik</a>
-      <a href="iletisim.html">İletişim</a>
-    </div>
-    <div class="vc-footer-copy">
-      <small>© 2026 VisionCraft Optik. Tüm hakları saklıdır.</small>
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="col-full">
+    <div class="vc-pill-footer" id="vcPillFooter">
+      <div class="vc-pill-footer-inner">
+        <div class="vc-footer-col">
+          <a class="vc-footer-logo" href="homepage.html">
+            <span class="vc-footer-logo-ico"><img class="vc-icon vc-icon--light" src="code/assets/glasses.png" alt="" width="18" height="18" /></span>
+            <span class="vc-logo-copy"><strong>VisionCraft</strong><small>OPT&#304;K</small></span>
+          </a>
+          <p>15 y&#305;ld&#305;r mahallenizin g&#252;venilir g&#246;zl&#252;k&#231;&#252;s&#252;.</p>
+          <div class="vc-footer-social">
+            <a href="#" aria-label="Instagram"><img src="code/assets/instagram.png" alt="Instagram" width="20" height="20" loading="lazy" /></a>
+            <a href="#" aria-label="WhatsApp"><img src="code/assets/whatsapp.png" alt="WhatsApp" width="20" height="20" loading="lazy" /></a>
+          </div>
+        </div>
+        <div class="vc-footer-col">
+          <h4>Al&#305;&#351;veri&#351;</h4>
+          <a href="magaza.html">Ma&#287;aza</a>
+          <a href="sepet.html">Sepet</a>
+        </div>
+        <div class="vc-footer-col">
+          <h4>Destek</h4>
+          <a href="recete-yukle.html">Re&#231;ete Y&#252;kle</a>
+          <a href="hakkimizda.html">Hakk&#305;m&#305;zda</a>
+          <a href="iletisim.html">&#304;leti&#351;im</a>
+        </div>
+        <div class="vc-footer-col">
+          <h4>&#304;leti&#351;im</h4>
+          <p><strong>Adres:</strong> KuleSite AVM, Sel&#231;uklu / Konya</p>
+          <p><strong>Telefon:</strong> +90 542 530 42 45</p>
+          <p><strong>E-posta:</strong> info@visioncraft.com.tr</p>
+        </div>
+      </div>
+      <div class="vc-pill-footer-bottom">
+        <span>&#169; 2026 VisionCraft Optik. T&#252;m haklar&#305; sakl&#305;d&#305;r.</span>
+      </div>
     </div>
   </div>
 </footer>
