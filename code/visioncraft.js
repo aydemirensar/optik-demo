@@ -145,7 +145,7 @@
       productCanvas.height = maxY - minY + 1;
       productCanvas.getContext('2d').putImageData(pixels, -minX, -minY);
     };
-    productImage.src = 'assets/vc-ar-black-rect.png';
+    productImage.src = 'code/assets/vc-ar-black-rect.png';
     var returnFocus = null;
     var focusableSelector = 'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
     function stopCamera() {
