@@ -176,9 +176,9 @@
       ctx.translate(centerX, centerY);
       ctx.rotate(angle);
       if (productCanvas) {
-        /* Gozluk olculeri: genislik 2.85x, dikey 0.72x inceltme (canli geri bildirim) */
-        var drawW = span * 2.85;
-        var drawH = drawW * productCanvas.height / productCanvas.width * 0.72;
+        /* Gozluk olculeri: genislik 1.65x, dikey 0.88x (mobil uyumlu) */
+        var drawW = span * 1.65;
+        var drawH = drawW * productCanvas.height / productCanvas.width * 0.88;
         ctx.globalAlpha = .98;
         ctx.drawImage(productCanvas, -drawW / 2, -drawH / 2, drawW, drawH);
         ctx.globalAlpha = 1;
