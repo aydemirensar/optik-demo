@@ -1,43 +1,132 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>VisionCraft Optik — Gözlüklerini Yüzünde Dene</title>
-<link rel="stylesheet" href="visioncraft.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VisionCraft Optik &#8212; G&#246;zl&#252;klerini Y&#252;z&#252;nde Dene</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="storefront.css">
+<link rel="stylesheet" href="gutenberg-blocks.css">
+<link rel="stylesheet" href="wc-blocks.css">
+<link rel="stylesheet" href="icons.css">
+<link rel="stylesheet" href="woocommerce.css">
+<link rel="stylesheet" href="brands.css">
+<link rel="stylesheet" href="visioncraft.css">
 </head>
-<body>
+<body class="home page woocommerce-no-js storefront-full-width-content">
 
-<!-- Header -->
-<header class="vc-pill-header" id="vcPillHeader">
-  <div class="vc-pill-header__inner">
-    <a href="homepage.html" class="vc-pill-brand">VisionCraft</a>
-    <nav class="vc-pill-nav">
-      <a href="homepage.html">Ana Sayfa</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="#">Mağaza</a>
-      <a href="#">İletişim</a>
+
+<a class="skip-link" href="#vcProdSlider">İçeriğe geç</a>
+    <header class="vc-pill-header" id="vcPillHeader">
+      <div class="vc-pill-inner">
+        <a class="vc-pill-logo" href="homepage.html">
+          <span class="vc-logo-ico"><img class="vc-icon vc-icon--light" src="assets/glasses.png" alt="" width="18" height="18" /></span>
+          <span class="vc-logo-copy"><strong>VisionCraft</strong><small>OPTİK</small></span>
+        </a>
+        <nav class="vc-pill-nav" aria-label="Ana menü">
+          <a href="homepage.html">Ana Sayfa</a><a href="#">Mağaza</a><a href="#">Reçete Yükle</a><a href="hakkimizda.html">Hakkımızda</a><a href="#">İletişim</a>
+        </nav>
+        <div class="vc-pill-actions">
+          <a class="vc-pill-cart" href="#" aria-label="Sepet">
+            <span class="vc-pill-cart-text">Sepetim</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span class="vc-pill-cart-count" style="display:none;">0</span>
+          </a>
+          <a class="vc-pill-btn" href="tel:+905425304245">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span class="vc-pill-btn-text">Hemen Görüşelim</span>
+          </a>
+          <button class="vc-pill-burger" id="vcPillBurger" aria-label="Menü" aria-controls="vcPillMobile" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="vc-pill-mobile" id="vcPillMobile" aria-label="Mobil menü">
+      <a href="homepage.html">Ana Sayfa</a><a href="#">Mağaza</a><a href="#">Reçete Yükle</a><a href="hakkimizda.html">Hakkımızda</a><a href="#">İletişim</a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:8px;">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>+90 542 530 42 45
+      </a>
     </nav>
-    <button class="vc-pill-burger" id="vcPillBurger" aria-label="Menüyü aç" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="vc-pill-mobile" id="vcPillMobile" hidden>
-    <a href="homepage.html">Ana Sayfa</a>
-    <a href="hakkimizda.html">Hakkımızda</a>
-    <a href="#">Mağaza</a>
-    <a href="#">İletişim</a>
-  </div>
-</header>
 
-<!-- Hero -->
+<div id="page" class="hfeed site">
+	
+	<header id="masthead" class="site-header" role="banner" style="">
+
+		<div class="col-full">		
+		
+				<div class="site-branding">
+			<div class="beta site-title"><a href="homepage.html" rel="home">VisionCraft Optik</a></div>		</div>
+					<div class="site-search">
+				<div class="widget woocommerce widget_product_search"><form role="search" method="get" class="woocommerce-product-search" action="homepage.html">
+	<label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
+	<input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Search products&hellip;" value="" name="s" />
+	<button type="submit" value="Search" class="">Search</button>
+	<input type="hidden" name="post_type" value="product" />
+</form>
+</div>			</div>
+			</div><div class="storefront-primary-navigation"><div class="col-full">		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Navigation">
+		<button id="site-navigation-menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>Menu</span></button>
+			<div class="primary-navigation"><ul id="menu-ana-menu" class="menu"><li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-38 current_page_item menu-item-47"><a href="homepage.html" aria-current="page">Ana Sayfa</a></li>
+<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="#">Mağaza</a></li>
+<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="#">Reçete Yükle</a></li>
+<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="hakkimizda.html">Hakkımızda</a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="#">İletişim</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-52"><a href="#/">Güneş Gözlükleri</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-53"><a href="#/">Mavi Işık Korumalı</a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-54"><a href="#/">Progresif Camlar</a></li>
+</ul></div><div class="menu"><ul>
+<li class="current_page_item"><a href="homepage.html">Home</a></li><li class="page_item page-item-8"><a href="#">Cart</a></li>
+<li class="page_item page-item-9"><a href="#">Checkout</a></li>
+<li class="page_item page-item-39"><a href="hakkimizda.html">Hakkımızda</a></li>
+<li class="page_item page-item-40"><a href="#">İletişim</a></li>
+<li class="page_item page-item-10"><a href="#">My account</a></li>
+<li class="page_item page-item-41"><a href="#">Reçete Yükle</a></li>
+<li class="page_item page-item-7"><a href="#">Shop</a></li>
+</ul></div>
+		</nav><!-- #site-navigation -->
+				<ul id="site-header-cart" class="site-header-cart menu">
+			<li class="">
+							<a class="cart-contents" href="#" title="View your shopping cart">
+								<span class="woocommerce-Price-amount amount">0,00&nbsp;<span class="woocommerce-Price-currencySymbol">&#8378;</span></span> <span class="count">0 items</span>
+			</a>
+					</li>
+			<li>
+				<div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content"></div></div>			</li>
+		</ul>
+			</div></div>
+	</header><!-- #masthead -->
+
+	
+	<div id="content" class="site-content" tabindex="-1">
+		<div class="col-full">
+
+		<div class="woocommerce"></div>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			
+<article id="post-38" class="post-38 page type-page status-publish hentry">
+			<header class="entry-header">
+			<h1 class="entry-title">Ana Sayfa</h1>		</header><!-- .entry-header -->
+				<div class="entry-content">
+			<!-- Hero -->
 <div class="vc-hero">
   <div>
     <div class="vc-hero-badge">✦ Yeni: Ray-Ban • Mustang • Carrera • Police koleksiyonu eklendi</div>
     <h1>Gözlüklerini <em>Yüzünde</em> Dene</h1>
-    <p class="vc-hero-sub">Ray-Ban, Mustang, Carrera ve Police'den 15+ yeni model eklendi. AR ile saniyeler içinde yüzünde gör, mağazada dene, evinde karar ver.</p>
+    <p class="vc-hero-sub">Ray-Ban, Mustang, Carrera ve Police&#8217;den 15+ yeni model eklendi. AR ile saniyeler içinde yüzünde gör, mağazada dene, evinde karar ver.</p>
     <div class="vc-hero-actions">
-      <button class="vc-btn vc-btn--teal vc-ar-launch" type="button" aria-haspopup="dialog">Kamerayla Dene</button>
+      <a class="vc-btn vc-btn--teal" href="#">Koleksiyonu Keşfet</a>
       <a class="vc-btn vc-btn--ghost" href="#">Reçetemi Yükle</a>
     </div>
     <div class="vc-hero-trust">
@@ -48,7 +137,7 @@
   </div>
   <div class="vc-hero-img">
     <div class="vc-img-wrap vc-ar-preview-hero">
-      <img src="assets/ray-ban-aviator-rb3025-1.jpg" alt="Ray-Ban Aviator - AR sanal deneme" width="800" height="800" fetchpriority="high" decoding="async" style="aspect-ratio:1/1;object-fit:cover" />
+      <img src="assets/ray-ban-aviator-rb3025-1.jpg" width="800" height="800" alt="Ray-Ban Aviator - AR sanal deneme" style="aspect-ratio:1/1;object-fit:cover" / fetchpriority="high" decoding="async">
       <div class="vc-ar-overlay" aria-label="AR çerçeve göstergesi">
         <div class="vc-ar-frame"></div>
         <div class="vc-ar-scan-line"></div>
@@ -56,7 +145,7 @@
       </div>
     </div>
     <div class="vc-float-card vc-float-card--ar">
-      <span class="vc-emoji"><img class="vc-icon" src="assets/camera.png" alt="Kamera ikonu" width="24" height="24" /></span>
+      <span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/camera.png" alt="Kamera ikonu" width="24" height="24" /></span>
       <div>Kameranla Dene<small>Ray-Ban &amp; Mustang</small></div>
     </div>
     <div class="vc-float-card vc-float-card--price" style="display:flex;align-items:center;gap:10px">
@@ -69,12 +158,12 @@
 <!-- Marquee -->
 <div class="vc-marquee" role="region" aria-label="Avantajlar scrollu">
   <div class="vc-marquee-track">
-    <span><span class="vc-m-ico"><img class="vc-icon" src="assets/truck.png" alt="Kargo ikonu" width="14" height="14" /></span> Ücretsiz Kargo</span>
-    <span><span class="vc-m-ico"><img class="vc-icon" src="assets/return.png" alt="İade ikonu" width="14" height="14" /></span> 30 Gün İade</span>
-    <span><span class="vc-m-ico"><img class="vc-icon" src="assets/shield.png" alt="Garanti ikonu" width="14" height="14" /></span> 2 Yıl Garanti</span>
-    <span><span class="vc-m-ico"><img class="vc-icon" src="assets/camera.png" alt="AR ikonu" width="14" height="14" /></span> AR Sanal Deneme</span>
-    <span><span class="vc-m-ico"><img class="vc-icon" src="assets/glasses.png" alt="Gözlük ikonu" width="14" height="14" /></span> Uzman Optisyen</span>
-    <span><span class="vc-m-ico"><img class="vc-icon" src="assets/bolt.png" alt="Kargo hızı ikonu" width="14" height="14" /></span> Aynı Gün Kargo</span>
+    <span><span class="vc-m-ico"><img decoding="async" loading="lazy" class="vc-icon" src="assets/truck.png" alt="Kargo ikonu" width="14" height="14" /></span> Ücretsiz Kargo</span>
+    <span><span class="vc-m-ico"><img decoding="async" loading="lazy" class="vc-icon" src="assets/return.png" alt="İade ikonu" width="14" height="14" /></span> 30 Gün İade</span>
+    <span><span class="vc-m-ico"><img decoding="async" loading="lazy" class="vc-icon" src="assets/shield.png" alt="Garanti ikonu" width="14" height="14" /></span> 2 Yıl Garanti</span>
+    <span><span class="vc-m-ico"><img decoding="async" loading="lazy" class="vc-icon" src="assets/camera.png" alt="AR ikonu" width="14" height="14" /></span> AR Sanal Deneme</span>
+    <span><span class="vc-m-ico"><img decoding="async" loading="lazy" class="vc-icon" src="assets/glasses.png" alt="Gözlük ikonu" width="14" height="14" /></span> Uzman Optisyen</span>
+    <span><span class="vc-m-ico"><img decoding="async" loading="lazy" class="vc-icon" src="assets/bolt.png" alt="Kargo hızı ikonu" width="14" height="14" /></span> Aynı Gün Kargo</span>
   </div>
 </div>
 
@@ -82,14 +171,14 @@
 <div class="vc-section-head vc-reveal">
   <span class="vc-kicker">Markalarımız</span>
   <h2>Dünyaca Ünlü Markalar</h2>
-  <p>Ray-Ban'den Mustang'e, Carrera'dan Police'ye — orijinal garantili, kutulu ve sertifikalı.</p>
+  <p>Ray-Ban&#8217;den Mustang&#8217;e, Carrera&#8217;dan Police&#8217;ye — orijinal garantili, kutulu ve sertifikalı.</p>
 </div>
 <div class="vc-cats vc-cats--brands">
-  <a class="vc-brand-image-card vc-reveal" href="#"><img src="assets/cat-ray-ban.jpg" alt="Ray-Ban gözlük çerçeveleri" loading="lazy" decoding="async" /><span class="vc-brand-image-card__caption"><strong>Ray-Ban</strong><small>Wayfarer • Aviator • Clubmaster</small></span></a>
-  <a class="vc-brand-image-card vc-reveal" data-delay="80" href="#"><img src="assets/cat-mustang.jpg" alt="Mustang gözlük çerçeveleri" loading="lazy" decoding="async" /><span class="vc-brand-image-card__caption"><strong>Mustang</strong><small>Optik • Güneş • Mavi Işık</small></span></a>
-  <a class="vc-brand-image-card vc-reveal" data-delay="160" href="#"><img src="assets/cat-carrera.jpg" alt="Carrera gözlük çerçeveleri" loading="lazy" decoding="async" /><span class="vc-brand-image-card__caption"><strong>Carrera</strong><small>Spor • Polarize • Yarış</small></span></a>
-  <a class="vc-brand-image-card vc-reveal" data-delay="240" href="#"><img src="assets/cat-police.jpg" alt="Police gözlük çerçeveleri" loading="lazy" decoding="async" /><span class="vc-brand-image-card__caption"><strong>Police</strong><small>Şehirli • Köşeli • Premium</small></span></a>
-  <a class="vc-brand-image-card vc-reveal" data-delay="320" href="#"><img src="assets/cat-oakley.jpg" alt="Oakley gözlük çerçeveleri" loading="lazy" decoding="async" /><span class="vc-brand-image-card__caption"><strong>Oakley</strong><small>Prizm • Spor • Titanium</small></span></a>
+  <a class="vc-brand-image-card vc-reveal" href="#"><img decoding="async" loading="lazy" src="assets/cat-ray-ban.jpg" alt="Ray-Ban gözlük çerçeveleri" /><span class="vc-brand-image-card__caption"><strong>Ray-Ban</strong><small>Wayfarer • Aviator • Clubmaster</small></span></a>
+  <a class="vc-brand-image-card vc-reveal" data-delay="80" href="#"><img decoding="async" loading="lazy" src="assets/cat-mustang.jpg" alt="Mustang gözlük çerçeveleri" /><span class="vc-brand-image-card__caption"><strong>Mustang</strong><small>Optik • Güneş • Mavi Işık</small></span></a>
+  <a class="vc-brand-image-card vc-reveal" data-delay="160" href="#"><img decoding="async" loading="lazy" src="assets/cat-carrera.jpg" alt="Carrera gözlük çerçeveleri" /><span class="vc-brand-image-card__caption"><strong>Carrera</strong><small>Spor • Polarize • Yarış</small></span></a>
+  <a class="vc-brand-image-card vc-reveal" data-delay="240" href="#"><img decoding="async" loading="lazy" src="assets/cat-police.jpg" alt="Police gözlük çerçeveleri" /><span class="vc-brand-image-card__caption"><strong>Police</strong><small>Şehirli • Köşeli • Premium</small></span></a>
+  <a class="vc-brand-image-card vc-reveal" data-delay="320" href="#"><img decoding="async" loading="lazy" src="assets/cat-oakley.jpg" alt="Oakley gözlük çerçeveleri" /><span class="vc-brand-image-card__caption"><strong>Oakley</strong><small>Prizm • Spor • Titanium</small></span></a>
 </div>
 
 <!-- Categories - by need -->
@@ -100,27 +189,27 @@
 </div>
 <div class="vc-cats">
   <div class="vc-cat-card">
-    <img src="assets/cat-gunes-gozlukleri.jpg" alt="Güneş gözlükleri koleksiyonu" loading="lazy" decoding="async" />
+    <img decoding="async" loading="lazy" src="assets/cat-gunes-gozlukleri.jpg" alt="Güneş gözlükleri koleksiyonu" />
     <div class="vc-cat-body">
       <h3>Güneş Gözlükleri</h3>
-      <p>Ray-Ban, Carrera, Police ve Oakley'den %100 UV400 korumalı polarize ve ayna camlı modeller.</p>
-      <a class="vc-cat-link" href="#">Kategoriyi Gör</a>
+      <p>Ray-Ban, Carrera, Police ve Oakley&#8217;den %100 UV400 korumalı polarize ve ayna camlı modeller.</p>
+      <a class="vc-cat-card-link" href="#">Kategoriyi Gör →</a>
     </div>
   </div>
   <div class="vc-cat-card">
-    <img src="assets/cat-mavi-isik-korumali.jpg" alt="Mavi ışık korumalı gözlükler" loading="lazy" decoding="async" />
+    <img decoding="async" loading="lazy" src="assets/cat-mavi-isik-korumali.jpg" alt="Mavi ışık korumalı gözlükler" />
     <div class="vc-cat-body">
       <h3>Mavi Işık Korumalı</h3>
-      <p>Mustang ve Oakley'den ekran başında göz yorgunluğunu azaltan, HEV filtreli özel camlar.</p>
-      <a class="vc-cat-link" href="#">Kategoriyi Gör</a>
+      <p>Mustang ve Oakley&#8217;den ekran başında göz yorgunluğunu azaltan, HEV filtreli özel camlar.</p>
+      <a class="vc-cat-card-link" href="#">Kategoriyi Gör →</a>
     </div>
   </div>
   <div class="vc-cat-card">
-    <img src="assets/cat-progresif-camlar.jpg" alt="Progresif cam gözlükler" loading="lazy" decoding="async" />
+    <img decoding="async" loading="lazy" src="assets/cat-progresif-camlar.jpg" alt="Progresif cam gözlükler" />
     <div class="vc-cat-body">
       <h3>Progresif Camlar</h3>
       <p>Mustang geniş çerçeveleri ile uzak-yakın tek camda, çizgisiz geçiş teknolojisi.</p>
-      <a class="vc-cat-link" href="#">Kategoriyi Gör</a>
+      <a class="vc-cat-card-link" href="#">Kategoriyi Gör →</a>
     </div>
   </div>
 </div>
@@ -129,12 +218,12 @@
 <div class="vc-ar-cta vc-reveal">
   <div>
     <h2>Kameranla Gözlüğü Yüzünde Gör</h2>
-    <p>Ray-Ban Wayfarer'dan Mustang optiklere — 40+ çerçeveyi AR ile saniyeler içinde dene. Beğendiğini sepete ekle, mağazadan veya kargoyla al.</p>
+    <p>Ray-Ban Wayfarer&#8217;dan Mustang optiklere — 40+ çerçeveyi AR ile saniyeler içinde dene. Beğendiğini sepete ekle, mağazadan veya kargoyla al.</p>
     <a class="vc-btn vc-btn--teal" href="#">Yüzümde Dene</a>
     <p class="vc-ar-note">Reçete gerekmez — sadece kameranı aç ve başla. Tüm markalarda geçerli.</p>
   </div>
   <div class="vc-ar-preview">
-    <img src="assets/ray-ban-wayfarer-rb2140-1.jpg" alt="Ray-Ban Wayfarer AR önizleme" loading="lazy" decoding="async" />
+    <img decoding="async" loading="lazy" src="assets/ray-ban-wayfarer-rb2140-1.jpg" alt="Ray-Ban Wayfarer AR önizleme" />
   </div>
 </div>
 
@@ -144,14 +233,7 @@
   <h2>Öne Çıkan Modeller</h2>
   <p>Yeni eklenen Ray-Ban, Mustang ve Carrera koleksiyonundan seçmeler.</p>
 </div>
-<div class="vc-reveal">
-  <div class="vc-product-grid">
-    <div class="vc-product-card"><img src="assets/ray-ban-aviator-rb3025-1.jpg" alt="Ray-Ban Aviator" /><h4>Ray-Ban Aviator</h4><p>Klasik pilot çerçevesi</p></div>
-    <div class="vc-product-card"><img src="assets/ray-ban-wayfarer-rb2140-1.jpg" alt="Ray-Ban Wayfarer" /><h4>Ray-Ban Wayfarer</h4><p>İkonik dörtgen tasarım</p></div>
-    <div class="vc-product-card"><img src="assets/cat-mustang.jpg" alt="Mustang Optik" /><h4>Mustang Optik</h4><p>Hafif ve şık</p></div>
-    <div class="vc-product-card"><img src="assets/cat-carrera.jpg" alt="Carrera Spor" /><h4>Carrera Spor</h4><p>Dinamik ve güçlü</p></div>
-  </div>
-</div>
+<div class="vc-reveal"><div class="vc-prod-slider" id="vcProdSlider"><div class="vc-prod-viewport"><div class="vc-prod-track"><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/oakley-ox-3218-titanium-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Oakley OX-3218 Optik Titanium Gri" loading="lazy" srcset="assets/oakley-ox-3218-titanium-1-324x324.jpg 324w, assets/oakley-ox-3218-titanium-1-150x150.jpg 150w, assets/oakley-ox-3218-titanium-1-100x100.jpg 100w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Oakley OX-3218 Optik Titanium Gri</span><span class="vc-prod-price"><span class="woocommerce-Price-amount amount"><bdi>4.690,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/oakley-holbrook-oo9244-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Oakley Holbrook OO9244 Mat Siyah" loading="lazy" srcset="assets/oakley-holbrook-oo9244-1-324x324.jpg 324w, assets/oakley-holbrook-oo9244-1-150x150.jpg 150w, assets/oakley-holbrook-oo9244-1-100x100.jpg 100w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Oakley Holbrook OO9244 Mat Siyah</span><span class="vc-prod-price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>4.290,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></del> <span class="screen-reader-text">Original price was: 4.290,00&nbsp;&#8378;.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>3.890,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></ins><span class="screen-reader-text">Current price is: 3.890,00&nbsp;&#8378;.</span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/police-vpll92-legend-2-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Police VPLL92 Legend 2 Mavi" loading="lazy" srcset="assets/police-vpll92-legend-2-1-324x324.jpg 324w, assets/police-vpll92-legend-2-1-300x300.jpg 300w, assets/police-vpll92-legend-2-1-150x150.jpg 150w, assets/police-vpll92-legend-2-1-768x768.jpg 768w, assets/police-vpll92-legend-2-1-416x416.jpg 416w, assets/police-vpll92-legend-2-1-100x100.jpg 100w, assets/police-vpll92-legend-2-1.jpg 800w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Police VPLL92 Legend 2 Mavi</span><span class="vc-prod-price"><span class="woocommerce-Price-amount amount"><bdi>3.290,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/police-vplp07-origins-lite-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Police VPLP07 Origins Lite Siyah" loading="lazy" srcset="assets/police-vplp07-origins-lite-1-324x324.jpg 324w, assets/police-vplp07-origins-lite-1-300x300.jpg 300w, assets/police-vplp07-origins-lite-1-150x150.jpg 150w, assets/police-vplp07-origins-lite-1-768x768.jpg 768w, assets/police-vplp07-origins-lite-1-416x416.jpg 416w, assets/police-vplp07-origins-lite-1-100x100.jpg 100w, assets/police-vplp07-origins-lite-1.jpg 800w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Police VPLP07 Origins Lite Siyah</span><span class="vc-prod-price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>3.590,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></del> <span class="screen-reader-text">Original price was: 3.590,00&nbsp;&#8378;.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>2.990,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></ins><span class="screen-reader-text">Current price is: 2.990,00&nbsp;&#8378;.</span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/carrera-grand-prix-2-sari-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Carrera Grand Prix 2/S Sarı" loading="lazy" srcset="assets/carrera-grand-prix-2-sari-1-324x324.jpg 324w, assets/carrera-grand-prix-2-sari-1-150x150.jpg 150w, assets/carrera-grand-prix-2-sari-1-100x100.jpg 100w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Carrera Grand Prix 2/S Sarı</span><span class="vc-prod-price"><span class="woocommerce-Price-amount amount"><bdi>3.990,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/carrera-ca-8888-havana-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Carrera CA-8888 Optik Havana" loading="lazy" srcset="assets/carrera-ca-8888-havana-1-324x324.jpg 324w, assets/carrera-ca-8888-havana-1-150x150.jpg 150w, assets/carrera-ca-8888-havana-1-100x100.jpg 100w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Carrera CA-8888 Optik Havana</span><span class="vc-prod-price"><span class="woocommerce-Price-amount amount"><bdi>2.990,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/carrera-1012-s-polarize-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Carrera 1012/S Siyah Polarize" loading="lazy" srcset="assets/carrera-1012-s-polarize-1-324x324.jpg 324w, assets/carrera-1012-s-polarize-1-150x150.jpg 150w, assets/carrera-1012-s-polarize-1-100x100.jpg 100w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Carrera 1012/S Siyah Polarize</span><span class="vc-prod-price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>3.790,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></del> <span class="screen-reader-text">Original price was: 3.790,00&nbsp;&#8378;.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi>3.290,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></ins><span class="screen-reader-text">Current price is: 3.290,00&nbsp;&#8378;.</span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a><a class="vc-prod-card" href="#/"><span class="vc-prod-img"><img decoding="async" width="324" height="324" src="assets/mustang-mu-3301-progresif-1-324x324.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="Mustang MU-3301 Progresif Uyumlu" loading="lazy" srcset="assets/mustang-mu-3301-progresif-1-324x324.jpg 324w, assets/mustang-mu-3301-progresif-1-150x150.jpg 150w, assets/mustang-mu-3301-progresif-1-100x100.jpg 100w" sizes="auto, (max-width: 324px) 100vw, 324px" /></span><span class="vc-prod-body"><span class="vc-prod-name">Mustang MU-3301 Progresif Uyumlu</span><span class="vc-prod-price"><span class="woocommerce-Price-amount amount"><bdi>2.490,00&nbsp;<span class="woocommerce-Price-currencySymbol" translate="no">&#8378;</span></bdi></span></span><span class="vc-prod-buy">Sipariş Ver <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></div></div><div class="vc-prod-controls"><button class="vc-prod-nav vc-prod-nav--prev" type="button" aria-label="Önceki"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button><span class="vc-prod-status" aria-live="polite">1 / 8</span><button class="vc-prod-nav vc-prod-nav--next" type="button" aria-label="Sonraki"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div></div></div>
 
 <!-- How it works -->
 <div class="vc-section-head vc-reveal" style="margin-top:60px">
@@ -163,7 +245,7 @@
   <div class="vc-step vc-reveal">
     <span class="vc-step-num">1</span>
     <h3>Modelini Seç &amp; Dene</h3>
-    <p>Ray-Ban, Mustang veya Carrera'dan tarzına uygun modeli AR ile yüzünde dene, beden ve renge karar ver.</p>
+    <p>Ray-Ban, Mustang veya Carrera&#8217;dan tarzına uygun modeli AR ile yüzünde dene, beden ve renge karar ver.</p>
     <span class="vc-step-arrow">→</span>
   </div>
   <div class="vc-step vc-reveal">
@@ -183,17 +265,17 @@
 <div class="vc-about vc-reveal">
   <div>
     <h2>Neden VisionCraft?</h2>
-    <p>15 yıldır mahallenizin güvenilir gözlükçüsüyüz. Artık Ray-Ban, Mustang, Carrera, Police ve Oakley'in <strong>yetkili satış noktası</strong> olarak, mağaza güvencesi ve sanal deneme kolaylığını birleştiriyoruz.</p>
+    <p>15 yıldır mahallenizin güvenilir gözlükçüsüyüz. Artık Ray-Ban, Mustang, Carrera, Police ve Oakley&#8217;in <strong>yetkili satış noktası</strong> olarak, mağaza güvencesi ve sanal deneme kolaylığını birleştiriyoruz.</p>
     <ul class="vc-about-points">
-      <li><span class="vc-emoji"><img class="vc-icon" src="assets/store.png" alt="Mağaza ikonu" width="20" height="20" /></span> 5 premium marka — orijinal garantili</li>
-      <li><span class="vc-emoji"><img class="vc-icon" src="assets/camera.png" alt="Kamera ikonu" width="22" height="22" /></span> AR ile yüzünde dene, mağazada teslim al</li>
-      <li><span class="vc-emoji"><img class="vc-icon" src="assets/document.png" alt="Belge ikonu" width="20" height="20" /></span> Reçeteni yükle, camı optisyen seçsin</li>
-      <li><span class="vc-emoji"><img class="vc-icon" src="assets/wrench.png" alt="Alet ikonu" width="20" height="20" /></span> Ücretsiz ayar &amp; bakım desteği — ömür boyu</li>
+      <li><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/store.png" alt="Mağaza ikonu" width="20" height="20" /></span> 5 premium marka — orijinal garantili</li>
+      <li><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/camera.png" alt="Kamera ikonu" width="22" height="22" /></span> AR ile yüzünde dene, mağazada teslim al</li>
+      <li><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/document.png" alt="Belge ikonu" width="20" height="20" /></span> Reçeteni yükle, camı optisyen seçsin</li>
+      <li><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/wrench.png" alt="Alet ikonu" width="20" height="20" /></span> Ücretsiz ayar &amp; bakım desteği — ömür boyu</li>
     </ul>
     <a class="vc-btn" href="hakkimizda.html">Hakkımızda</a>
   </div>
   <div>
-    <img src="assets/cat-ray-ban.jpg" alt="VisionCraft mağaza iç mekan - Ray-Ban koleksiyonu" style="aspect-ratio:4/3;object-fit:cover" />
+    <img decoding="async" loading="lazy" src="assets/cat-ray-ban.jpg" alt="VisionCraft mağaza iç mekan - Ray-Ban koleksiyonu" style="aspect-ratio:4/3;object-fit:cover" />
   </div>
 </div>
 
@@ -207,95 +289,200 @@
   <div class="vc-testi-track">
     <div class="vc-testi-card">
       <div class="vc-stars">★★★★★</div>
-      <p>"Ray-Ban Wayfarer'ımı burada buldum, AR ile denedim, mağazada aynı çerçeveyi bulmak çok kolay oldu. Orijinal kutuda geldi."</p>
+      <p>&#8220;Ray-Ban Wayfarer&#8217;ımı burada buldum, AR ile denedim, mağazada aynı çerçeveyi bulmak çok kolay oldu. Orijinal kutuda geldi.&#8221;</p>
       <footer><span class="vc-avatar">E</span><div><strong>Elif K.</strong><small>İstanbul · Ağustos 2026 · Ray-Ban Wayfarer</small></div></footer>
     </div>
     <div class="vc-testi-card">
       <div class="vc-stars">★★★★★</div>
-      <p>"Mustang optik çerçeve aldım, hem hafif hem şık. Reçetemi yükledim, optisyen 1 gün içinde aradı, camı tam istediğim gibi yaptılar."</p>
+      <p>&#8220;Mustang optik çerçeve aldım, hem hafif hem şık. Reçetemi yükledim, optisyen 1 gün içinde aradı, camı tam istediğim gibi yaptılar.&#8221;</p>
       <footer><span class="vc-avatar">M</span><div><strong>Murat A.</strong><small>Ankara · Temmuz 2026 · Mustang MU-2847</small></div></footer>
     </div>
     <div class="vc-testi-card">
       <div class="vc-stars">★★★★★</div>
-      <p>"Carrera polarize güneş gözlüğüm efsane. Araç kullanırken parlama sıfır, tasarım çok agresif. Kesinlikle tavsiye ederim."</p>
+      <p>&#8220;Carrera polarize güneş gözlüğüm efsane. Araç kullanırken parlama sıfır, tasarım çok agresif. Kesinlikle tavsiye ederim.&#8221;</p>
       <footer><span class="vc-avatar">S</span><div><strong>Selin Y.</strong><small>İzmir · Haziran 2026 · Carrera 1012/S</small></div></footer>
     </div>
     <div class="vc-testi-card">
       <div class="vc-stars">★★★★★</div>
-      <p>"Police Legend aldım, aynalı camı çok havalı. Fiyat mağazadan uygun, 30 gün iade güvencesi ikna etti."</p>
+      <p>&#8220;Police Legend aldım, aynalı camı çok havalı. Fiyat mağazadan uygun, 30 gün iade güvencesi ikna etti.&#8221;</p>
       <footer><span class="vc-avatar">B</span><div><strong>Burak D.</strong><small>Bursa · Mayıs 2026 · Police Legend</small></div></footer>
     </div>
     <div class="vc-testi-card">
       <div class="vc-stars">★★★★★</div>
-      <p>"Oakley Holbrook hem spor hem günlük kullanım için mükemmel. Prizm cam gerçekten fark yaratıyor."</p>
+      <p>&#8220;Oakley Holbrook hem spor hem günlük kullanım için mükemmel. Prizm cam gerçekten fark yaratıyor.&#8221;</p>
       <footer><span class="vc-avatar">A</span><div><strong>Aylin T.</strong><small>Antalya · Nisan 2026 · Oakley Holbrook</small></div></footer>
     </div>
   </div>
 </div>
 
-<div class="vc-stats">
-  <div class="vc-stat"><strong>15+</strong><span>Yıl Deneyim</span></div>
-  <div class="vc-stat"><strong>5</strong><span>Premium Marka</span></div>
-  <div class="vc-stat"><strong>4.9/5</strong><span>Müşteri Puanı</span></div>
-  <div class="vc-stat"><strong>10K+</strong><span>Mutlu Müşteri</span></div>
-</div>
+<div class="vc-wc-stats">
+      <div class="vc-wc-stat">
+        <strong data-count="28">0</strong>
+        <span>Ürün</span>
+      </div>
+      <div class="vc-wc-stat">
+        <strong data-count="0">0</strong>
+        <span>Tamamlanan Sipariş</span>
+      </div>
+      <div class="vc-wc-stat">
+        <strong data-count="0">0</strong>
+        <span>Müşteri Yorumu</span>
+      </div>
+      <div class="vc-wc-stat">
+        <strong data-count="8">0</strong>
+        <span>Kategori</span>
+      </div>
+    </div>
 
 <!-- Trust -->
 <div class="vc-trust">
-  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img class="vc-icon" src="assets/shield.png" alt="Garanti ikonu" width="40" height="40" /></span><strong>2 Yıl Garanti</strong><span>Ray-Ban • Mustang • Carrera</span></div>
-  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img class="vc-icon" src="assets/truck.png" alt="Kargo ikonu" width="40" height="40" /></span><strong>Ücretsiz Kargo</strong><span>200₺ üzeri siparişlerde</span></div>
-  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img class="vc-icon" src="assets/return.png" alt="İade ikonu" width="40" height="40" /></span><strong>30 Gün İade</strong><span>Koşulsuz iade garantisi</span></div>
-  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img class="vc-icon" src="assets/glasses.png" alt="Gözlük ikonu" width="40" height="40" /></span><strong>Yetkili Satıcı</strong><span>Orijinal kutu &amp; sertifika</span></div>
+  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/shield.png" alt="Garanti ikonu" width="40" height="40" /></span><strong>2 Yıl Garanti</strong><span>Ray-Ban • Mustang • Carrera</span></div>
+  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/truck.png" alt="Kargo ikonu" width="40" height="40" /></span><strong>Ücretsiz Kargo</strong><span>200₺ üzeri siparişlerde</span></div>
+  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/return.png" alt="İade ikonu" width="40" height="40" /></span><strong>30 Gün İade</strong><span>Koşulsuz iade garantisi</span></div>
+  <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img decoding="async" loading="lazy" class="vc-icon" src="assets/glasses.png" alt="Gözlük ikonu" width="40" height="40" /></span><strong>Yetkili Satıcı</strong><span>Orijinal kutu &amp; sertifika</span></div>
 </div>
 
 <div class="vc-newsletter">
-  <h3>Kampanyalardan Haberdar Ol</h3>
-  <p>Yeni modeller ve indirimler için e-posta listemize katıl.</p>
-  <form onsubmit="event.preventDefault(); alert('Teşekkürler!');">
-    <input type="email" placeholder="E-posta adresin" required />
-    <button type="submit">Katıl</button>
-  </form>
-</div>
+      <h2><img decoding="async" class="vc-icon-inline vc-icon--light" src="assets/mail.png" alt="" /> Fırsatları Kaçırma</h2>
+      <p>Yeni koleksiyonlar ve kampanyalar e-postana gelsin. Abone ol, ilk siparişine özel %10 indirim kodun hazır olsun.</p>
+      <form action="/visioncraft/ana-sayfa/" method="get" novalidate aria-describedby="vcNewsletterHint">
+        <input type="hidden" name="vc_bulten" value="ok"/>
+        <label for="vc-newsletter-email" class="sr-only">E-posta adresiniz</label>
+        <input type="email" id="vc-newsletter-email" name="email" placeholder="E-posta adresin" required maxlength="254" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" aria-describedby="vcNewsletterHint vcNewsletterError" autocomplete="email" inputmode="email" />
+        <div id="vcNewsletterError" role="alert" aria-live="assertive" style="display:none; color:#fecaca; font-size:0.85rem; margin-top:8px;"></div>
+        <button type="submit" class="vc-btn vc-btn--teal">Abone Ol</button>
+      </form>
+      
+      <p id="vcNewsletterHint" class="vc-newsletter-note">Spam yok. İstediğin an abonelikten çıkabilirsin.</p>
+    </div>
+					</div><!-- .entry-content -->
+		</article><!-- #post-## -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+		</div><!-- .col-full -->
+	</div><!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="col-full">
+
+			
+    <div class="vc-pill-footer" id="vcPillFooter" aria-label="Alt menü">
+      <div class="vc-pill-footer-inner">
+        <div class="vc-footer-col">
+          <a class="vc-footer-logo" href="homepage.html">
+            <span class="vc-footer-logo-ico"><img class="vc-icon vc-icon--light" src="assets/glasses.png" alt="" width="18" height="18" /></span>
+            <span class="vc-logo-copy"><strong>VisionCraft</strong><small>OPTİK</small></span>
+          </a>
+          <p>15 yıldır mahallenizin güvenilir gözlükçüsü. Fiziksel mağaza güvencesiyle, mağazada ve internetten aynı özenle yanınızdayız.</p>
+          <span class="vc-footer-social-label">Sosyal medya</span>
+          <div class="vc-footer-social">
+            <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><img src="assets/instagram.png" alt="Instagram" width="20" height="20" loading="lazy" /></a>
+            <a href="https://x.com" aria-label="X" target="_blank" rel="noopener"><img src="assets/x.svg" alt="X" width="20" height="20" loading="lazy" /></a>
+            <a href="https://youtube.com" aria-label="YouTube" target="_blank" rel="noopener"><img src="assets/youtube.png" alt="YouTube" width="20" height="20" loading="lazy" /></a>
+            <a href="https://wa.me/905425304245" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="assets/whatsapp.png" alt="WhatsApp" width="20" height="20" loading="lazy" /></a>
+          </div>
+        </div>
+        <div class="vc-footer-col">
+          <h4>Alışveriş</h4>
+          <a href="#">Mağaza</a>
+          <a href="#">Güneş Gözlükleri</a>
+          <a href="#">Mavi Işık Korumalı</a>
+          <a href="#">Progresif Camlar</a>
+          <a href="#">Sepet</a>
+        </div>
+        <div class="vc-footer-col">
+          <h4>Destek</h4>
+          <a href="#">Reçete Yükle</a>
+          <a href="hakkimizda.html">Hakkımızda</a>
+          <a href="#">İletişim</a>
+          <a href="#">Sık Sorulan Sorular</a>
+          <a href="#">Hesabım</a>
+        </div>
+        <div class="vc-footer-col">
+          <h4>İletişim</h4>
+          <p class="vc-footer-contact"><strong>Adres:</strong> KuleSite AVM,<br/>Selçuklu / Konya</p>
+          <p class="vc-footer-contact"><strong>Telefon:</strong> +90 542 530 42 45<br/><strong>E-posta:</strong> info@visioncraft.com.tr</p>
+          <a class="vc-btn vc-btn--teal vc-footer-contact-cta" href="https://wa.me/905425304245">WhatsApp ile Yaz</a>
+        </div>
+      </div>
+      <div class="vc-pill-footer-bottom">
+        <span>© 2026 VisionCraft Optik. Tüm hakları saklıdır.</span>
+        <div class="vc-pay-badges">
+          <span>VISA</span><span>Mastercard</span><span>TROY</span><span>Havale</span><span>Kapıda Ödeme</span>
+        </div>
+        <span class="vc-footer-attribution">İkonlar: <a href="https://www.flaticon.com/" target="_blank" rel="noopener">Flaticon</a></span>
+      </div>
+    </div>
+		</div><!-- .col-full -->
+	</footer><!-- #colophon -->
+
+	
+</div><!-- #page -->
+
 
 <div class="vc-ar-modal" id="vcArModal" role="dialog" aria-modal="true" aria-labelledby="vcArTitle" aria-describedby="vcArDescription" hidden>
-  <div class="vc-ar-modal__backdrop" data-ar-close></div>
-  <div class="vc-ar-modal__panel" role="document">
-    <div class="vc-ar-modal__head">
-      <div>
-        <span class="vc-kicker">Kamera ile deneme</span>
-        <h2 id="vcArTitle">Gözlüğü yüzünde gör</h2>
+      <div class="vc-ar-modal__backdrop" data-ar-close></div>
+      <div class="vc-ar-modal__panel" role="document">
+        <div class="vc-ar-modal__head">
+          <div><span class="vc-kicker">Kamera ile deneme</span><h2 id="vcArTitle">Gözlüğü yüzünde gör</h2></div>
+          <button class="vc-ar-modal__close" type="button" aria-label="Kamera denemesini kapat" data-ar-close>×</button>
+        </div>
+        <p id="vcArDescription" class="vc-ar-modal__description">Kameranı açarak yüzünü kadraja al. Bu önizleme, mağazaya gitmeden önce deneme deneyimini görmeni sağlar.</p>
+        <div class="vc-ar-stage"><video id="vcArVideo" autoplay playsinline muted></video><canvas id="vcArOverlay" aria-hidden="true"></canvas><div class="vc-ar-stage__frame" aria-hidden="true"></div><p class="vc-ar-stage__status" id="vcArStatus" role="status">Kamera izni bekleniyor...</p></div>
+        <p class="vc-ar-modal__note">Kamera görüntüsü bu sayfada gösterilir; kaydedilmez.</p>
       </div>
-      <button class="vc-ar-modal__close" type="button" aria-label="Kamera denemesini kapat" data-ar-close>×</button>
     </div>
-    <p id="vcArDescription" class="vc-ar-modal__description">Kameranı açarak yüzünü kadraja al. Bu önizleme, mağazaya gitmeden önce deneme deneyimini görmeni sağlar.</p>
-    <div class="vc-ar-stage">
-      <video id="vcArVideo" autoplay playsinline muted></video>
-      <canvas id="vcArOverlay" aria-hidden="true"></canvas>
-      <div class="vc-ar-stage__frame" aria-hidden="true"></div>
-      <p class="vc-ar-stage__status" id="vcArStatus" role="status">Kamera izni bekleniyor...</p>
-    </div>
-    <p class="vc-ar-modal__note">Kamera görüntüsü bu sayfada gösterilir; kaydedilmez.</p>
-  </div>
-</div>
+    <a href="https://wa.me/905425304245?text=Merhaba%2C%20VisionCraft%20Optik%20ile%20ileti%C5%9Fime%20ge%C3%A7mek%20istiyorum."
+       class="vc-whatsapp"
+       target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 32 32" width="34" height="34" fill="#fff" aria-hidden="true">
+        <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.7.7 5.3 2 7.6L.5 31.5l8.1-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.5 20.9c-.3.9-1.7 1.7-2.5 1.8-.7.1-1.6.1-2.6-.2-6.2-2-10.1-6.7-10.4-7.1-.3-.3-2.5-3.3-2.5-6.3s1.6-4.5 2.1-5.1c.6-.6 1.2-.7 1.6-.7h1.2c.4 0 .9-.1 1.3.9.5 1.2 1.6 4.2 1.7 4.4.1.3.2.6 0 .9-.1.4-.2.6-.5.9l-.7.9c-.2.2-.5.5-.2 1 .3.5 1.2 2 2.6 3.2 1.8 1.6 3.3 2.1 3.8 2.3.4.2.7.2 1-.1.3-.3 1.2-1.4 1.5-1.9.3-.5.6-.4 1-.2l1.9.9c.4.2.7.3.8.5.1.2.1.8-.1 1.4z"/>
+      </svg>
+    </a>	
+	
 
-<!-- Footer -->
-<footer class="vc-pill-footer" id="vcPillFooter">
-  <div class="vc-pill-footer__inner">
-    <div class="vc-footer-brand">
-      <strong>VisionCraft Optik</strong>
-      <small>İstiklal Caddesi No:12, Beyoğlu / İstanbul</small>
+
+
+
+
+
+
+
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=homepage.htmlwp-includes/js/wp-emoji-loader.min.js
+</script>
+
+    <div class="vc-mobile-search" id="vcMobileSearch" aria-hidden="true">
+      <form role="search" method="get" action="homepage.html">
+        <label class="sr-only" for="vcMobileSearchField">Ürün ara</label>
+        <input id="vcMobileSearchField" type="search" name="s" placeholder="Gözlük veya marka ara" autocomplete="off" />
+        <input type="hidden" name="post_type" value="product" />
+        <button type="submit">Ara</button>
+      </form>
     </div>
-    <div class="vc-footer-links">
-      <a href="homepage.html">Ana Sayfa</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
-      <a href="#">Gizlilik</a>
-      <a href="#">İletişim</a>
-    </div>
-    <div class="vc-footer-copy">
-      <small>© 2026 VisionCraft Optik. Tüm hakları saklıdır.</small>
-    </div>
-  </div>
-</footer>
+    <nav class="vc-mobile-dock" aria-label="Mobil hızlı menü">
+      <a href="homepage.html" data-dock-path="/visioncraft/" aria-label="Ana Sayfa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5z"/><path d="M9 21v-7h6v7"/></svg><span>Ana Sayfa</span>
+      </a>
+      <a href="#" data-dock-path="/visioncraft/shop/" aria-label="Mağaza">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v10h16V10"/><path d="M3 4h18l-2 6H5z"/><path d="M9 20v-6h6v6"/></svg><span>Mağaza</span>
+      </a>
+      <button type="button" id="vcMobileSearchToggle" aria-label="Ürün ara" aria-expanded="false" aria-controls="vcMobileSearch">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Ara</span>
+      </button>
+      <a class="vc-mobile-dock-cart" href="#" data-dock-path="/visioncraft/cart/" aria-label="Sepet">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 7H6"/></svg><span>Sepet</span><span class="vc-mobile-dock-count" style="display:none;">0</span>
+      </a>
+      <a href="#" data-dock-path="/visioncraft/my-account/" aria-label="Hesabım">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Hesabım</span>
+      </a>
+    </nav>
 
 <script src="visioncraft.js"></script>
 </body>
