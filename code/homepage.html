@@ -8,6 +8,28 @@
 </head>
 <body>
 
+<!-- Header -->
+<header class="vc-pill-header" id="vcPillHeader">
+  <div class="vc-pill-header__inner">
+    <a href="homepage.html" class="vc-pill-brand">VisionCraft</a>
+    <nav class="vc-pill-nav">
+      <a href="homepage.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="#">Mağaza</a>
+      <a href="#">İletişim</a>
+    </nav>
+    <button class="vc-pill-burger" id="vcPillBurger" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="vc-pill-mobile" id="vcPillMobile" hidden>
+    <a href="homepage.html">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="#">Mağaza</a>
+    <a href="#">İletişim</a>
+  </div>
+</header>
+
 <!-- Hero -->
 <div class="vc-hero">
   <div>
@@ -122,7 +144,14 @@
   <h2>Öne Çıkan Modeller</h2>
   <p>Yeni eklenen Ray-Ban, Mustang ve Carrera koleksiyonundan seçmeler.</p>
 </div>
-<div class="vc-reveal">[vc_products limit="8"]</div>
+<div class="vc-reveal">
+  <div class="vc-product-grid">
+    <div class="vc-product-card"><img src="assets/ray-ban-aviator-rb3025-1.jpg" alt="Ray-Ban Aviator" /><h4>Ray-Ban Aviator</h4><p>Klasik pilot çerçevesi</p></div>
+    <div class="vc-product-card"><img src="assets/ray-ban-wayfarer-rb2140-1.jpg" alt="Ray-Ban Wayfarer" /><h4>Ray-Ban Wayfarer</h4><p>İkonik dörtgen tasarım</p></div>
+    <div class="vc-product-card"><img src="assets/cat-mustang.jpg" alt="Mustang Optik" /><h4>Mustang Optik</h4><p>Hafif ve şık</p></div>
+    <div class="vc-product-card"><img src="assets/cat-carrera.jpg" alt="Carrera Spor" /><h4>Carrera Spor</h4><p>Dinamik ve güçlü</p></div>
+  </div>
+</div>
 
 <!-- How it works -->
 <div class="vc-section-head vc-reveal" style="margin-top:60px">
@@ -204,7 +233,12 @@
   </div>
 </div>
 
-[vc_wc_stats]
+<div class="vc-stats">
+  <div class="vc-stat"><strong>15+</strong><span>Yıl Deneyim</span></div>
+  <div class="vc-stat"><strong>5</strong><span>Premium Marka</span></div>
+  <div class="vc-stat"><strong>4.9/5</strong><span>Müşteri Puanı</span></div>
+  <div class="vc-stat"><strong>10K+</strong><span>Mutlu Müşteri</span></div>
+</div>
 
 <!-- Trust -->
 <div class="vc-trust">
@@ -214,7 +248,14 @@
   <div class="vc-trust-card vc-reveal"><span class="vc-emoji"><img class="vc-icon" src="assets/glasses.png" alt="Gözlük ikonu" width="40" height="40" /></span><strong>Yetkili Satıcı</strong><span>Orijinal kutu &amp; sertifika</span></div>
 </div>
 
-[vc_newsletter]
+<div class="vc-newsletter">
+  <h3>Kampanyalardan Haberdar Ol</h3>
+  <p>Yeni modeller ve indirimler için e-posta listemize katıl.</p>
+  <form onsubmit="event.preventDefault(); alert('Teşekkürler!');">
+    <input type="email" placeholder="E-posta adresin" required />
+    <button type="submit">Katıl</button>
+  </form>
+</div>
 
 <div class="vc-ar-modal" id="vcArModal" role="dialog" aria-modal="true" aria-labelledby="vcArTitle" aria-describedby="vcArDescription" hidden>
   <div class="vc-ar-modal__backdrop" data-ar-close></div>
@@ -236,6 +277,25 @@
     <p class="vc-ar-modal__note">Kamera görüntüsü bu sayfada gösterilir; kaydedilmez.</p>
   </div>
 </div>
+
+<!-- Footer -->
+<footer class="vc-pill-footer" id="vcPillFooter">
+  <div class="vc-pill-footer__inner">
+    <div class="vc-footer-brand">
+      <strong>VisionCraft Optik</strong>
+      <small>İstiklal Caddesi No:12, Beyoğlu / İstanbul</small>
+    </div>
+    <div class="vc-footer-links">
+      <a href="homepage.html">Ana Sayfa</a>
+      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="#">Gizlilik</a>
+      <a href="#">İletişim</a>
+    </div>
+    <div class="vc-footer-copy">
+      <small>© 2026 VisionCraft Optik. Tüm hakları saklıdır.</small>
+    </div>
+  </div>
+</footer>
 
 <script src="visioncraft.js"></script>
 </body>
