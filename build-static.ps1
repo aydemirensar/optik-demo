@@ -59,10 +59,16 @@ $body = $body -replace 'http://localhost/visioncraft/iletisim/', '#'
 $body = $body -replace 'http://localhost/visioncraft/cart/', '#'
 $body = $body -replace 'http://localhost/visioncraft/checkout/', '#'
 $body = $body -replace 'http://localhost/visioncraft/my-account/', '#'
-$body = $body -replace 'http://localhost/visioncraft/product-category/[^"/]*', '#'
-$body = $body -replace 'http://localhost/visioncraft/product/[^"/]*', '#'
+$body = $body -replace 'http://localhost/visioncraft/product-category/[^"]*', '#'
+$body = $body -replace 'http://localhost/visioncraft/product/[^"]*', '#'
 $body = $body -replace 'http://localhost/visioncraft/ana-sayfa/', 'homepage.html'
 $body = $body -replace 'http://localhost/visioncraft/', 'homepage.html'
+
+# Prefix asset/CSS/JS paths with code/ for root-level HTML
+$body = $body -replace 'src="assets/', 'src="code/assets/'
+$body = $body -replace "src='assets/", "src='code/assets/"
+$body = $body -replace 'href="(storefront|gutenberg-blocks|wc-blocks|icons|woocommerce|brands|visioncraft)\.css"', 'href="code/$1.css"'
+$body = $body -replace 'src="visioncraft\.js"', 'src="code/visioncraft.js"'
 
 # Build the full HTML document
 $html = '<!DOCTYPE html>' + "`r`n" +
@@ -88,5 +94,5 @@ $body + "`r`n" +
 '</body>' + "`r`n" +
 '</html>'
 
-[System.IO.File]::WriteAllText("$root\code\homepage.html", $html, [System.Text.Encoding]::UTF8)
-Write-Host "homepage.html generated: $((Get-Item "$root\code\homepage.html").Length) bytes"
+[System.IO.File]::WriteAllText("$root\homepage.html", $html, [System.Text.Encoding]::UTF8)
+Write-Host "homepage.html generated: $((Get-Item "$root\homepage.html").Length) bytes"
